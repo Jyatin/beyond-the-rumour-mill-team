@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TEAM MODULE 2: Candidate Readiness, Q&A & Alumni Connect
 
 ## Teammate Assignment
@@ -120,3 +121,10 @@ npx tsc --noEmit
 # Run unit tests
 npx vitest run tests/qa-system.test.ts tests/mentorship.test.ts tests/readiness.test.ts
 ```
+=======
+# Beyond the Rumour Mill
+
+**Live website:** https://beyond-the-rumour-mill-main-mws322y1b-jyatin1.vercel.app
+
+ 
+>>>>>>> teammate/FARUK
