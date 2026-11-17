@@ -190,7 +190,7 @@ npm run db:seed
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open `http://localhost:3000` in your browser.
 
 ### Verification Commands
 
@@ -211,7 +211,7 @@ Current development is centered on completing and integrating the product module
 
 ## 10. Team & Collaboration
 
-**Project Lead & Platform Architect:** [Jyatin Singh](https://github.com/Jyatin)
+**Project Lead & Platform Architect:** Jyatin Singh
 
 The team works across three independently owned modules, coordinated through shared platform conventions and integration reviews. Contributor responsibilities, file boundaries, and handoff steps are documented in the resources below.
 
