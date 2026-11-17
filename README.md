@@ -2,19 +2,10 @@
 
 ### Campus Placement & Interview Intelligence Platform
 
-[![CI Pipeline](https://github.com/Jyatin/beyond-the-rumour-mill/actions/workflows/ci.yml/badge.svg)](https://github.com/Jyatin/beyond-the-rumour-mill/actions/workflows/ci.yml)
-[![Node.js](https://img.shields.io/badge/Node.js-20.x-brightgreen?logo=node.js)](https://nodejs.org/)
-[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-blue?logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql)](https://www.postgresql.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
 > Turning scattered placement experiences into structured, searchable, and actionable career intelligence.
 
 **Live application:** [beyond-the-rumour-mill-main.vercel.app](https://beyond-the-rumour-mill-main.vercel.app)  
-**Main repository:** [beyond-the-rumour-mill](https://github.com/Jyatin/beyond-the-rumour-mill)  
-**Team repository:** [beyond-the-rumour-mill-team](https://github.com/Jyatin/beyond-the-rumour-mill-team)
 
 ---
 
@@ -108,20 +99,76 @@ The project currently reports **24 passing Vitest test suites**.
 | Testing | Vitest |
 | Deployment & automation | Vercel, GitHub Actions |
 
-## 7. Run Locally
+## 7. Codebase Structure
+
+The repository uses a feature-oriented structure. The Next.js App Router defines the application pages and API endpoints, reusable interface elements live in dedicated component folders, and server-side business logic is separated from the UI.
+
+```text
+.
+├── contracts/                 # Shared types and contracts across modules
+│   ├── auth-helpers.ts
+│   ├── auth-schema.ts
+│   └── notifications.ts
+├── screenshots/               # README and product preview images
+├── src/
+│   ├── app/                    # Next.js routes, layouts, and API endpoints
+│   │   ├── admin/              # Drive administration and moderation
+│   │   ├── alumni/             # Alumni discovery
+│   │   ├── api/                # Route handlers (CV and evidence APIs)
+│   │   ├── companies/          # Company directory and company detail pages
+│   │   ├── experiences/        # Browse, submit, edit, and view experiences
+│   │   ├── prepare/            # Candidate preparation workspace
+│   │   ├── profile/            # User profile
+│   │   ├── questions/          # Interview question repository
+│   │   └── ...                 # About, stats, guidelines, privacy, and other pages
+│   ├── components/             # Reusable UI grouped by product feature
+│   │   ├── admin/
+│   │   ├── companies/
+│   │   ├── connect/
+│   │   ├── experiences/
+│   │   ├── prepare/
+│   │   ├── profile/
+│   │   └── questions/
+│   └── server/                 # Server-only application and domain logic
+│       ├── actions/            # Mutations and server actions
+│       ├── ai/                 # AI extraction, evaluation, and provider logic
+│       ├── consensus/          # Aggregation and consensus calculations
+│       ├── db/schema/          # Database schema split by team module
+│       ├── normalization/      # Normalize submitted experiences and questions
+│       ├── qa/                 # Quality, moderation, and question-answer logic
+│       ├── queries/            # Database read operations
+│       ├── readiness/          # Candidate readiness calculations
+│       ├── reputation/         # Trust and reputation signals
+│       ├── storage/            # File and evidence storage
+│       └── validators/         # Server-side input validation
+├── tests/                      # Unit and integration tests
+├── .env.example                # Environment variable template
+├── TEAM_HANDOFF_GUIDE.md       # Team onboarding and handoff documentation
+└── README.md
+```
+
+**How to navigate the code:**
+- Start in `src/app/` to find a page or API route.
+- Check `src/components/` for the UI associated with a feature.
+- Use `src/server/actions/` for write operations and `src/server/queries/` for data retrieval.
+- Review `src/server/db/schema/` for the PostgreSQL data model; module-specific schema files keep team ownership separated.
+- Look in `src/server/ai/`, `consensus/`, and `normalization/` for the intelligence and data-processing pipeline.
+- Run or extend tests in `tests/` when changing application behavior.
+
+## 8. Run Locally
 
 ### Prerequisites
 
 - Node.js 20.x or later
 - npm 10.x or later
-- PostgreSQL 16, locally or through a hosted provider such as [Neon](https://neon.tech/)
+- PostgreSQL 16
 
 ### Installation
 
 Clone the team repository and install dependencies:
 
 ```bash
-git clone https://github.com/Jyatin/beyond-the-rumour-mill-team.git
+gh repo clone Jyatin/beyond-the-rumour-mill-team
 cd beyond-the-rumour-mill-team
 npm install
 ```
@@ -156,24 +203,20 @@ npm run build
 
 The GitHub Actions workflow automates database initialization, linting, type checking, tests, and the Next.js production build.
 
-## 8. Project Status & Next Steps
+## 9. Project Status & Next Steps
 
 The project has an established full-stack foundation, including authentication, PostgreSQL persistence, modular schema boundaries, core placement workflows, and automated quality checks.
 
 Current development is centered on completing and integrating the product modules. Further milestones include expanding the experience archive, strengthening alumni and mentorship workflows, and continuing to improve placement-drive and moderation capabilities.
 
-## 9. Team & Collaboration
+## 10. Team & Collaboration
 
 **Project Lead & Platform Architect:** [Jyatin Singh](https://github.com/Jyatin)
 
 The team works across three independently owned modules, coordinated through shared platform conventions and integration reviews. Contributor responsibilities, file boundaries, and handoff steps are documented in the resources below.
 
-- [Team Handoff Guide](./TEAM_HANDOFF_GUIDE.md)
-- [File Ownership Matrix](./TEAM_FILE_OWNERSHIP_MATRIX.md)
-- [Integration Guide](./TEAM_INTEGRATION_GUIDE.md)
-- [Main source repository](https://github.com/Jyatin/beyond-the-rumour-mill)
-- [Team repository](https://github.com/Jyatin/beyond-the-rumour-mill-team)
-- [Project Lead on LinkedIn](https://www.linkedin.com/in/jyatinsingh/)
+- `TEAM_HANDOFF_GUIDE.md` — contributor onboarding, responsibilities, and handoff process
+- `contracts/` — shared TypeScript contracts for authentication helpers, auth schema, and notifications
 
 ---
 
