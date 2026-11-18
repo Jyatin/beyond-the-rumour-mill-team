@@ -1,249 +1,461 @@
-# Beyond the Rumour Mill
+<!-- ====================================================== -->
+<!--                    PROJECT HEADER                     -->
+<!-- ====================================================== -->
+
+<div align="center">
+
+# 🎓 Beyond the Rumour Mill
 
 ### Campus Placement & Interview Intelligence Platform
 
+**Less hearsay. More signal. Better preparation.**
 
-> Turning scattered placement experiences into structured, searchable, and actionable career intelligence.
+Turn scattered placement experiences into structured, searchable, and actionable career intelligence.
 
-**Live application:** [beyond-the-rumour-mill-main.vercel.app](https://beyond-the-rumour-mill-main-mws322y1b-jyatin1.vercel.app)  
+<p>
+  <a href="https://beyond-the-rumour-mill-main-mws322y1b-jyatin1.vercel.app">
+    <img src="https://img.shields.io/badge/🚀_Live_Application-Visit_Platform-111827?style=for-the-badge" alt="Visit live application" />
+  </a>
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js" alt="Next.js 16" />
+  <img src="https://img.shields.io/badge/React-19-149ECA?style=for-the-badge&logo=react" alt="React 19" />
+  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript 5" />
+  <img src="https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql" alt="PostgreSQL 16" />
+  <img src="https://img.shields.io/badge/Drizzle_ORM-Typed_Data_Access-C5F74F?style=for-the-badge" alt="Drizzle ORM" />
+  <img src="https://img.shields.io/badge/Better_Auth-Authentication-5B5BD6?style=for-the-badge" alt="Better Auth" />
+</p>
+
+<p>
+  <a href="#-overview">Overview</a> ·
+  <a href="#-product-preview">Preview</a> ·
+  <a href="#-features">Features</a> ·
+  <a href="#-system-architecture">Architecture</a> ·
+  <a href="#-engineering">Engineering</a> ·
+  <a href="#-project-structure">Structure</a> ·
+  <a href="#-team--contribution">Team</a>
+</p>
+
+</div>
 
 ---
 
-## 1. What is Beyond the Rumour Mill?
+## ⚡ 30-Second Overview
 
-Placement preparation often depends on fragmented information: forwarded messages, informal conversations, outdated notes, and second-hand accounts of interview rounds. Important details about assessments, technical interviews, eligibility, and preparation strategies are easily lost between graduating batches.
+### What is Beyond the Rumour Mill?
 
-**Beyond the Rumour Mill** is a full-stack campus placement intelligence platform designed to make that knowledge structured and reusable. Students can explore company-specific hiring experiences, understand interview-round patterns, practice with shared questions, track their preparation, and connect with seniors who have already navigated the process.
+Campus placement knowledge is often fragmented across WhatsApp groups, informal conversations, old notes, and second-hand interview stories. Candidates struggle to understand which information is relevant, current, or trustworthy.
 
-The goal is simple: replace uncertain campus hearsay with useful experiences, organized data, and peer-driven guidance.
+**Beyond the Rumour Mill** is a campus placement intelligence platform that brings interview experiences, company insights, preparation resources, alumni guidance, and placement opportunities into one organised space.
 
-## 2. Application Preview
+The platform is designed to help students move from *“I heard this company asks these questions”* to *“I understand the hiring process, the available evidence, and how to prepare.”*
+
+| The usual placement experience | What the platform enables |
+|---|---|
+| Scattered messages and outdated notes | Structured, searchable interview experiences |
+| Unclear source and reliability | Context, review, and verification workflows |
+| Repeated questions across batches | A reusable interview question repository |
+| Unstructured preparation | A personal candidate readiness workspace |
+| Difficult access to relevant seniors | Alumni discovery and mentorship pathways |
+
+---
+
+## 📸 Product Preview
+
+A look at the platform's interface and key product areas.
 
 <table>
   <tr>
+    <td align="center" width="100%" colspan="2">
+      <img src="screenshots/editorial-hero.png" alt="Beyond the Rumour Mill editorial homepage" width="100%" />
+      <br />
+      <strong>01 · Editorial Homepage</strong>
+      <br />
+      <sub>A central starting point for placement intelligence and platform discovery.</sub>
+    </td>
+  </tr>
+  <tr>
     <td align="center" width="50%">
-      <img src="screenshots/editorial-hero.png" alt="Editorial homepage and platform overview" width="100%" />
-      <sub><b>Editorial Homepage</b><br/>An introduction to the platform, placement context, and key navigation.</sub>
+      <img src="screenshots/company-dossier.jpg" alt="Company intelligence dossier" width="100%" />
+      <br />
+      <strong>02 · Company Intelligence</strong>
+      <br />
+      <sub>Company-specific interview rounds, reported questions, and hiring context.</sub>
     </td>
     <td align="center" width="50%">
-      <img src="screenshots/company-dossier.jpg" alt="Company dossier and interview round details" width="100%" />
-      <sub><b>Company Intelligence</b><br/>Company-specific interview rounds, difficulty trends, and reported questions.</sub>
+      <img src="screenshots/preparation-hub.jpg" alt="Candidate preparation hub" width="100%" />
+      <br />
+      <strong>03 · Candidate Readiness</strong>
+      <br />
+      <sub>A focused space for preparation tasks and progress.</sub>
     </td>
   </tr>
 </table>
 
-## 3. Core Features
+---
 
-- **Structured interview experiences:** A guided submission flow captures company, role, hiring type, assessment details, technical rounds, questions, outcomes, and preparation advice.
-- **Company intelligence dossiers:** Consolidated experiences help candidates explore hiring patterns, round sequences, frequently reported topics, and difficulty trends.
-- **Interview question repository:** Browse questions and discussion topics contributed through candidate experiences.
-- **Personal preparation hub:** Create and track study tasks across areas such as DSA, core computer science, system design, and HR preparation.
-- **Alumni connection:** Discover seniors by company and area of expertise, with flows for mentorship and focused career guidance.
-- **Placement drive management:** Publish campus opportunities, eligibility details, deadlines, and application information.
-- **Moderation and privacy:** Support review workflows and optional anonymous publishing while retaining internal author references for accountability.
+## ✨ Features
 
-## 4. System Architecture & Design
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🧠 Interview Intelligence</h3>
+      <ul>
+        <li>Structured interview experience submissions</li>
+        <li>Company and role-specific hiring insights</li>
+        <li>Interview round and question discovery</li>
+        <li>Experience normalization and consensus signals</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🔎 Trust & Verification</h3>
+      <ul>
+        <li>Evidence-aware experience review</li>
+        <li>Moderation and reporting workflows</li>
+        <li>Verification and reputation signals</li>
+        <li>Anonymous public contribution support</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>📚 Candidate Readiness</h3>
+      <ul>
+        <li>Personal preparation workspace</li>
+        <li>DSA and core CS preparation tasks</li>
+        <li>Interview question repository</li>
+        <li>Readiness-oriented progress tracking</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🤝 Alumni & Community</h3>
+      <ul>
+        <li>Alumni discovery by company and expertise</li>
+        <li>Community Q&A and discussion flows</li>
+        <li>Mentorship and mock interview pathways</li>
+        <li>Peer-driven career guidance</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🏢 Placement Operations</h3>
+      <ul>
+        <li>Placement drive announcements</li>
+        <li>Eligibility and application information</li>
+        <li>Student application workflows</li>
+        <li>Administrative review and moderation</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>⚙️ Platform Foundations</h3>
+      <ul>
+        <li>Authentication and role-aware operations</li>
+        <li>Relational data model with PostgreSQL</li>
+        <li>Typed database access through Drizzle ORM</li>
+        <li>Automated test and quality-check foundation</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
-Beyond the Rumour Mill uses a **modular monolith** built on the Next.js App Router. The web application, server-side actions, queries, and domain modules live in one deployable codebase, but are organised around clear product boundaries. This keeps local development and deployment simple while allowing the team to build and integrate features independently.
-
-### High-level system design
-
-The diagram shows how a request moves through the application, where validation and authentication happen, and how the platform accesses persistent data and supporting services.
-
-```mermaid
-flowchart TB
-    USER["Students & Alumni"] --> BROWSER["Browser · Next.js UI"]
-    BROWSER --> APP["Next.js App Router"]
-    APP --> RSC["React Server Components"]
-    APP --> ENTRY["Server Actions & Route Handlers"]
-    ENTRY --> AUTH["Better Auth · Sessions & Identity"]
-    ENTRY --> VALIDATE["Zod · Input Validation"]
-    RSC --> QUERIES["Server-side Queries"]
-    AUTH --> DOMAIN["Domain & Feature Logic"]
-    VALIDATE --> DOMAIN
-    QUERIES --> DOMAIN
-    DOMAIN --> MODULES["Experiences · Companies · Readiness · Alumni · Drives"]
-    MODULES --> DATA["Drizzle ORM"]
-    DATA --> DB[("PostgreSQL 16")]
-    DOMAIN --> AI["AI · Normalization · Consensus"]
-    DOMAIN --> FILES["Storage Service"]
-    FILES --> BLOB["Vercel Blob"]
-    CI["GitHub Actions · Tests · Lint · Typecheck · Build"] -. "quality gates" .-> APP
-```
-
-### How the system works
-
-1. **Presentation:** Students and alumni interact with the Next.js interface. React Server Components render data-driven pages, while client components handle interactive UI.
-2. **Request handling:** The App Router directs reads to server-side queries and writes to Server Actions or Route Handlers.
-3. **Identity and validation:** Better Auth supplies session context. Zod validates incoming data before application operations proceed; server-side authorization checks protect user-scoped actions.
-4. **Domain processing:** Feature logic handles interview experiences, company information, candidate readiness, alumni connections, placement drives, and moderation. Supporting AI, normalization, and consensus modules process relevant information.
-5. **Persistence and files:** Drizzle ORM provides typed access to PostgreSQL, the primary store for relational application data. The storage layer integrates with Vercel Blob for file and evidence assets.
-6. **Quality gates:** GitHub Actions runs database setup and automated checks so changes can be validated before integration.
-
-### Team module boundaries
-
-| Module | Main responsibility |
-| --- | --- |
-| **Module 1 — Experience Intelligence** | Interview submissions, company profiles, interview rounds, and experience discovery |
-| **Module 2 — Candidate Readiness & Community** | Preparation workflows, interview questions, and alumni connections |
-| **Module 3 — Drives & Governance** | Placement drives, applications, and moderation |
-| **Shared Platform Core** | Authentication, database access, shared contracts and UI, storage, CI, and deployment |
-
-### Key design decisions
-
-- **Modular monolith over microservices:** Product modules share one application and deployment, avoiding premature network and operational complexity.
-- **Clear server boundaries:** Database access, secrets, validation, and business rules stay on the server rather than being exposed to the browser.
-- **PostgreSQL as the source of truth:** Relational records and constraints support consistency across users, companies, experiences, rounds, and preparation data.
-- **Feature ownership:** Module-specific schema and component areas, shared contracts, and documented handoffs let contributors work in parallel with fewer integration conflicts.
-
-> **Scope note:** This is a high-level view of the current codebase and its intended request boundaries. It is not a deployment-topology diagram, and it does not imply that every listed product workflow or integration is fully production-ready.
-
-## 5. Data, Security & Quality
-
-The relational data model connects users, companies, interview experiences, rounds, questions, preparation tasks, and placement drives. PostgreSQL constraints and transactional writes help preserve consistency across related records.
-
-Key engineering considerations include:
-
-- **Authentication and roles:** Better Auth manages registration and sessions, with server-side role enforcement.
-- **Input validation:** Zod schemas validate data before it reaches server-side operations.
-- **Authorization:** User-scoped operations check record ownership before allowing updates or deletions.
-- **Anonymous contributions:** Public presentation can hide contributor identity while retaining internal references for moderation.
-- **Relational integrity:** Foreign keys, cascade rules, and database transactions protect related records.
-- **Automated verification:** Vitest suites cover core application and data workflows; CI also runs linting, TypeScript checks, database setup, and a production build.
-
-The project currently reports **24 passing Vitest test suites**.
-
-## 6. Technology Stack
-
-| Layer | Technologies |
-|---|---|
-| Application | Next.js 16, React 19, TypeScript |
-| Styling & components | Tailwind CSS v4, Radix UI, Lucide React |
-| Database & ORM | PostgreSQL 16, Drizzle ORM |
-| Authentication | Better Auth |
-| Validation | Zod |
-| Testing | Vitest |
-| Deployment & automation | Vercel, GitHub Actions |
-
-## 7. Codebase Structure
-
-The repository uses a feature-oriented structure. The Next.js App Router defines the application pages and API endpoints, reusable interface elements live in dedicated component folders, and server-side business logic is separated from the UI.
-
-```text
-.
-├── contracts/                 # Shared types and contracts across modules
-│   ├── auth-helpers.ts
-│   ├── auth-schema.ts
-│   └── notifications.ts
-├── screenshots/               # README and product preview images
-├── src/
-│   ├── app/                    # Next.js routes, layouts, and API endpoints
-│   │   ├── admin/              # Drive administration and moderation
-│   │   ├── alumni/             # Alumni discovery
-│   │   ├── api/                # Route handlers (CV and evidence APIs)
-│   │   ├── companies/          # Company directory and company detail pages
-│   │   ├── experiences/        # Browse, submit, edit, and view experiences
-│   │   ├── prepare/            # Candidate preparation workspace
-│   │   ├── profile/            # User profile
-│   │   ├── questions/          # Interview question repository
-│   │   └── ...                 # About, stats, guidelines, privacy, and other pages
-│   ├── components/             # Reusable UI grouped by product feature
-│   │   ├── admin/
-│   │   ├── companies/
-│   │   ├── connect/
-│   │   ├── experiences/
-│   │   ├── prepare/
-│   │   ├── profile/
-│   │   └── questions/
-│   └── server/                 # Server-only application and domain logic
-│       ├── actions/            # Mutations and server actions
-│       ├── ai/                 # AI extraction, evaluation, and provider logic
-│       ├── consensus/          # Aggregation and consensus calculations
-│       ├── db/schema/          # Database schema split by team module
-│       ├── normalization/      # Normalize submitted experiences and questions
-│       ├── qa/                 # Quality, moderation, and question-answer logic
-│       ├── queries/            # Database read operations
-│       ├── readiness/          # Candidate readiness calculations
-│       ├── reputation/         # Trust and reputation signals
-│       ├── storage/            # File and evidence storage
-│       └── validators/         # Server-side input validation
-├── tests/                      # Unit and integration tests
-├── .env.example                # Environment variable template
-├── TEAM_HANDOFF_GUIDE.md       # Team onboarding and handoff documentation
-└── README.md
-```
-
-**How to navigate the code:**
-- Start in `src/app/` to find a page or API route.
-- Check `src/components/` for the UI associated with a feature.
-- Use `src/server/actions/` for write operations and `src/server/queries/` for data retrieval.
-- Review `src/server/db/schema/` for the PostgreSQL data model; module-specific schema files keep team ownership separated.
-- Look in `src/server/ai/`, `consensus/`, and `normalization/` for the intelligence and data-processing pipeline.
-- Run or extend tests in `tests/` when changing application behavior.
-
-## 8. Run Locally
-
-### Prerequisites
-
-- Node.js 20.x or later
-- npm 10.x or later
-- PostgreSQL 16
-
-### Installation
-
-Clone the team repository and install dependencies:
-
-```bash
-gh repo clone Jyatin/beyond-the-rumour-mill-team
-cd beyond-the-rumour-mill-team
-npm install
-```
-
-Create a `.env` file in the project root:
-
-```env
-DATABASE_URL="postgresql://user:password@localhost:5432/beyond_the_rumour_mill"
-BETTER_AUTH_SECRET="your_secret_at_least_32_characters"
-BETTER_AUTH_URL="http://localhost:3000"
-NEXT_PUBLIC_APP_URL="http://localhost:3000"
-```
-
-Push the schema, seed sample data, and start the development server:
-
-```bash
-npm run db:push
-npm run db:seed
-npm run dev
-```
-
-Open `http://localhost:3000` in your browser.
-
-### Verification Commands
-
-```bash
-npm run test
-npm run lint
-npx tsc --noEmit
-npm run build
-```
-
-The GitHub Actions workflow automates database initialization, linting, type checking, tests, and the Next.js production build.
-
-## 9. Project Status & Next Steps
-
-The project has an established full-stack foundation, including authentication, PostgreSQL persistence, modular schema boundaries, core placement workflows, and automated quality checks.
-
-Current development is centered on completing and integrating the product modules. Further milestones include expanding the experience archive, strengthening alumni and mentorship workflows, and continuing to improve placement-drive and moderation capabilities.
-
-## 10. Team & Collaboration
-
-**Project Lead & Platform Architect:** Jyatin Singh
-
-The team works across three independently owned modules, coordinated through shared platform conventions and integration reviews. Contributor responsibilities, file boundaries, and handoff steps are documented in the resources below.
-
-- `TEAM_HANDOFF_GUIDE.md` — contributor onboarding, responsibilities, and handoff process
-- `contracts/` — shared TypeScript contracts for authentication helpers, auth schema, and notifications
+> [!NOTE]
+> The repository is under active development. Feature descriptions represent the platform's implemented foundations and product scope; individual workflows may still be evolving.
 
 ---
 
-*Built to make campus placement knowledge more transparent, useful, and accessible to every student.*
+## 🏗️ System Architecture
+
+Beyond the Rumour Mill follows a **modular monolith** architecture. The application is organised into distinct product domains inside one Next.js codebase, with shared authentication, database, storage, and infrastructure layers.
+
+### High-level architecture
+
+```mermaid
+flowchart TB
+    USERS["Students · Alumni · Administrators"]
+    subgraph CLIENT["Presentation Layer"]
+      BROWSER["Browser"]
+      NEXT["Next.js App Router"]
+      RSC["React Server Components"]
+      UI["Interactive UI Components"]
+      BROWSER --> NEXT
+      NEXT --> RSC
+      NEXT --> UI
+    end
+
+    subgraph SERVER["Application Layer"]
+      ENTRY["Server Actions & Route Handlers"]
+      AUTH["Better Auth"]
+      VALIDATE["Zod Validation"]
+      DOMAIN["Domain Services"]
+      MODULES["Experiences · Readiness · Alumni · Drives · Governance"]
+      ENTRY --> AUTH
+      ENTRY --> VALIDATE
+      AUTH --> DOMAIN
+      VALIDATE --> DOMAIN
+      DOMAIN --> MODULES
+    end
+
+    subgraph DATA["Data & Integration Layer"]
+      ORM["Drizzle ORM"]
+      DB[("PostgreSQL 16")]
+      AI["AI · Extraction · Normalization · Consensus"]
+      STORAGE["Storage Service"]
+      BLOB["Vercel Blob"]
+      ORM --> DB
+      STORAGE --> BLOB
+    end
+
+    USERS --> BROWSER
+    RSC --> ENTRY
+    UI --> ENTRY
+    MODULES --> ORM
+    MODULES --> AI
+    MODULES --> STORAGE
+```
+
+### How a request flows
+
+1. **Interact:** A student or alumnus uses the Next.js application.
+2. **Route:** The App Router renders the relevant page or directs a mutation to a Server Action or Route Handler.
+3. **Authenticate & validate:** Better Auth provides session context; Zod validates incoming data, and server-side checks enforce access rules.
+4. **Process:** Domain logic executes the relevant experience, company, readiness, alumni, placement, or moderation workflow.
+5. **Persist:** Drizzle ORM performs typed database operations against PostgreSQL. File and evidence assets are handled through the storage integration.
+6. **Respond:** The application returns the updated state or rendered data to the user.
+
+### Team module boundaries
+
+| Ownership area | Responsibilities |
+|---|---|
+| **Module 1 — Experience Intelligence** | Experience capture, company dossiers, interview rounds, normalization, extraction, and consensus |
+| **Module 2 — Candidate Readiness & Community** | Preparation hub, readiness calculations, questions, alumni discovery, and mentorship |
+| **Module 3 — Drives & Governance** | Placement drives, applications, verification, CV/evidence workflows, and moderation |
+| **Shared Platform Core** | Authentication, database infrastructure, shared contracts, UI conventions, storage, and deployment |
+
+### Data model at a glance
+
+The platform's relational model connects the people, companies, and hiring information that power its discovery and preparation workflows.
+
+```mermaid
+erDiagram
+    USER ||--o{ EXPERIENCE : contributes
+    COMPANY ||--o{ EXPERIENCE : receives
+    EXPERIENCE ||--o{ INTERVIEW_ROUND : contains
+    INTERVIEW_ROUND ||--o{ INTERVIEW_QUESTION : includes
+    USER ||--o{ PREPARATION_TASK : tracks
+    USER ||--o{ MENTORSHIP : participates
+    COMPANY ||--o{ PLACEMENT_DRIVE : announces
+    PLACEMENT_DRIVE ||--o{ APPLICATION : receives
+    USER ||--o{ APPLICATION : submits
+
+    USER {
+      string id PK
+      string email
+      string role
+    }
+    COMPANY {
+      string id PK
+      string name
+    }
+    EXPERIENCE {
+      string id PK
+      string company_id FK
+      string author_id FK
+      string status
+    }
+    INTERVIEW_ROUND {
+      string id PK
+      string experience_id FK
+      string round_type
+    }
+    INTERVIEW_QUESTION {
+      string id PK
+      string round_id FK
+      string topic
+    }
+    PREPARATION_TASK {
+      string id PK
+      string user_id FK
+      string status
+    }
+    PLACEMENT_DRIVE {
+      string id PK
+      string company_id FK
+      string status
+    }
+    APPLICATION {
+      string id PK
+      string drive_id FK
+      string user_id FK
+    }
+    MENTORSHIP {
+      string id PK
+      string user_id FK
+      string status
+    }
+```
+
+> The diagrams are conceptual views of the system and domain relationships, not exhaustive deployment or database-schema specifications.
+
+---
+
+## 🛡️ Engineering & Quality
+
+The project emphasises data integrity, server-side validation, and clear ownership boundaries.
+
+| Area | Approach |
+|---|---|
+| **Authentication** | Better Auth manages user identity and sessions |
+| **Authorization** | Server-side role and ownership checks protect sensitive operations |
+| **Input validation** | Zod schemas validate incoming application data |
+| **Data integrity** | PostgreSQL constraints, relational modelling, and transactional writes |
+| **Database access** | Drizzle ORM provides typed queries and schema migrations |
+| **Evidence & privacy** | Review workflows and controlled access for sensitive evidence and CV resources |
+| **Testing** | Vitest suites cover core application and data workflows |
+| **Code quality** | TypeScript checks and ESLint support maintainability |
+
+The current project documentation reports **24 passing Vitest test suites**. Test coverage and integration checks should continue to evolve alongside the product modules.
+
+---
+
+## 🧰 Technology Stack
+
+| Layer | Technologies |
+|---|---|
+| **Application Framework** | [Next.js 16](https://nextjs.org/) · [React 19](https://react.dev/) |
+| **Language** | [TypeScript](https://www.typescriptlang.org/) |
+| **Styling & UI** | [Tailwind CSS 4](https://tailwindcss.com/) · [Radix UI](https://www.radix-ui.com/) · [Lucide](https://lucide.dev/) |
+| **Authentication** | [Better Auth](https://www.better-auth.com/) |
+| **Database** | [PostgreSQL 16](https://www.postgresql.org/) |
+| **ORM & Migrations** | [Drizzle ORM](https://orm.drizzle.team/) |
+| **Validation** | [Zod](https://zod.dev/) |
+| **Email** | [Resend](https://resend.com/) |
+| **File Storage** | [Vercel Blob](https://vercel.com/docs/vercel-blob) |
+| **Testing** | [Vitest](https://vitest.dev/) |
+| **Deployment** | [Vercel](https://vercel.com/) |
+
+### Why a modular monolith?
+
+- **Simpler operations:** One application is easier to develop, test, and deploy than multiple independently operated services.
+- **Clear domain boundaries:** Feature modules keep ownership and business logic organised.
+- **Shared consistency:** Modules use common authentication, contracts, database infrastructure, and validation patterns.
+- **Room to evolve:** Individual domains can be extracted into services later if scale or operational needs justify it.
+
+---
+
+## 📂 Project Structure
+
+The repository uses a feature-oriented structure. Pages and routes live in the Next.js App Router, reusable UI is grouped by product area, and server-side business logic is separated into domain-focused modules.
+
+```text
+beyond-the-rumour-mill-team/
+├── contracts/                   # Shared contracts across modules
+│   ├── auth-helpers.ts
+│   ├── auth-schema.ts
+│   └── notifications.ts
+├── screenshots/                 # README and product screenshots
+├── src/
+│   ├── app/                      # App Router pages and API routes
+│   │   ├── admin/                # Placement administration & moderation
+│   │   ├── alumni/               # Alumni discovery
+│   │   ├── companies/            # Company directory and dossiers
+│   │   ├── experiences/          # Submit, browse, and view experiences
+│   │   ├── prepare/              # Candidate preparation workspace
+│   │   ├── questions/            # Interview question repository
+│   │   └── ...                   # Profile, connect, privacy, and more
+│   ├── components/               # Reusable feature components
+│   └── server/                   # Server-only application logic
+│       ├── actions/              # Mutations and Server Actions
+│       ├── ai/                   # Extraction and AI provider logic
+│       ├── consensus/            # Experience aggregation
+│       ├── db/schema/            # Module-specific database schemas
+│       ├── normalization/        # Experience and question normalization
+│       ├── qa/                   # Claims, ranking, and moderation rules
+│       ├── queries/              # Database read operations
+│       ├── readiness/            # Candidate readiness calculations
+│       ├── reputation/           # Trust and reputation signals
+│       ├── storage/              # File and evidence storage
+│       └── validators/           # Server-side validation
+├── tests/                        # Automated tests
+├── .env.example                  # Environment variable template
+├── TEAM_HANDOFF_GUIDE.md         # Team onboarding and ownership guide
+└── README.md
+```
+
+### Where to look
+
+- **Pages and routes:** `src/app/`
+- **Feature UI:** `src/components/`
+- **Write operations:** `src/server/actions/`
+- **Read operations:** `src/server/queries/`
+- **Database schemas:** `src/server/db/schema/`
+- **AI and data processing:** `src/server/ai/`, `src/server/normalization/`, `src/server/consensus/`
+- **Tests:** `tests/`
+
+---
+
+## 👥 Team & Contribution
+
+The project is divided into three product modules so contributors can work in parallel with explicit file and schema ownership.
+
+| Team area | Focus |
+|---|---|
+| **Module 1** | Experience capture and consensus intelligence |
+| **Module 2** | Candidate readiness, Q&A, and alumni mentorship |
+| **Module 3** | Placement operations, verification, and governance |
+| **Platform Core** | Shared infrastructure, authentication, contracts, and integration |
+
+### Contribution workflow
+
+1. Read the [Team Handoff Guide](./TEAM_HANDOFF_GUIDE.md) before making changes.
+2. Start from the agreed base branch and create your assigned feature branch.
+3. Modify only the files and schema owned by your module.
+4. Run the relevant tests and TypeScript checks before pushing.
+5. Open a pull request and coordinate integration with the project lead.
+
+**Important:** The handoff guide defines protected shared files and module-specific schema ownership. Follow it to avoid cross-team merge conflicts.
+
+---
+
+## 🚦 Project Status
+
+- [x] Next.js application foundation
+- [x] PostgreSQL and Drizzle ORM integration
+- [x] Better Auth foundation
+- [x] Module-oriented schema boundaries
+- [x] Experience intelligence and data-processing foundations
+- [x] Candidate readiness and community foundations
+- [x] Placement and governance foundations
+- [x] Automated test foundation
+- [ ] Complete integration of all module workflows
+- [ ] Expand end-to-end and production-readiness coverage
+
+---
+
+## 🔗 Project Links
+
+- **Live Application:** [Open Beyond the Rumour Mill](https://beyond-the-rumour-mill-main-mws322y1b-jyatin1.vercel.app)
+- **Team Handoff Guide:** [TEAM_HANDOFF_GUIDE.md](./TEAM_HANDOFF_GUIDE.md)
+- **Repository:** [Jyatin/beyond-the-rumour-mill-team](https://github.com/Jyatin/beyond-the-rumour-mill-team)
+
+---
+
+## 👨‍💻 Maintainer
+
+**Jyatin Singh**
+
+- GitHub: [@Jyatin](https://github.com/Jyatin)
+- LinkedIn: [Jyatin Singh](https://www.linkedin.com/in/jyatinsingh/)
+
+---
+
+<div align="center">
+
+### Beyond the Rumour Mill
+
+**Less hearsay. More signal. Better preparation.**
+
+<sub>Built to make campus placement knowledge more transparent, useful, and accessible.</sub>
+
+</div>
