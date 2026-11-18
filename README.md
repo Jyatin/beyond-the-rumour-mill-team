@@ -5,7 +5,7 @@
 
 > Turning scattered placement experiences into structured, searchable, and actionable career intelligence.
 
-**Live application:** [beyond-the-rumour-mill-main.vercel.app](https://beyond-the-rumour-mill-main.vercel.app)  
+**Live application:** [beyond-the-rumour-mill-main.vercel.app](https://beyond-the-rumour-mill-main-mws322y1b-jyatin1.vercel.app)  
 
 ---
 
