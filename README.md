@@ -63,30 +63,29 @@ The platform is designed to help students move from *“I heard this company ask
 
 ## 📸 Product Preview
 
-A look at the platform's interface and key product areas.
+A side-by-side look at the platform's main experiences.
 
 <table>
   <tr>
-    <td align="center" width="33.33%">
-      <img src="screenshots/editorial-hero.png" alt="Beyond the Rumour Mill editorial homepage" width="100%" />
-      <br />
-      <strong>01 · Editorial Homepage</strong>
-      <br />
-      <sub>Placement intelligence and platform discovery.</sub>
+    <td align="center" width="20%">
+      <img src="screenshots/editorial-hero.png" alt="Platform homepage" width="100%" />
+      <br /><strong>Home</strong>
     </td>
-    <td align="center" width="33.33%">
-      <img src="screenshots/company-dossier.jpg" alt="Company intelligence dossier" width="100%" />
-      <br />
-      <strong>02 · Company Intelligence</strong>
-      <br />
-      <sub>Company-specific rounds, questions, and hiring context.</sub>
+    <td align="center" width="20%">
+      <img src="screenshots/company-dossier.jpg" alt="Company and employer intelligence" width="100%" />
+      <br /><strong>Companies</strong>
     </td>
-    <td align="center" width="33.33%">
+    <td align="center" width="20%">
       <img src="screenshots/preparation-hub.jpg" alt="Candidate preparation hub" width="100%" />
-      <br />
-      <strong>03 · Candidate Readiness</strong>
-      <br />
-      <sub>Preparation tasks and progress tracking.</sub>
+      <br /><strong>Preparation</strong>
+    </td>
+    <td align="center" width="20%">
+      <img src="screenshots/platform-preview.png" alt="Student questions and placement inquiry archive" width="100%" />
+      <br /><strong>Questions</strong>
+    </td>
+    <td align="center" width="20%">
+      <img src="screenshots/alumni-dialogue.png" alt="Alumni network and mentorship" width="100%" />
+      <br /><strong>Alumni</strong>
     </td>
   </tr>
 </table>
