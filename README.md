@@ -42,35 +42,61 @@ The goal is simple: replace uncertain campus hearsay with useful experiences, or
 - **Placement drive management:** Publish campus opportunities, eligibility details, deadlines, and application information.
 - **Moderation and privacy:** Support review workflows and optional anonymous publishing while retaining internal author references for accountability.
 
-## 4. System Architecture
+## 4. System Architecture & Design
 
-The project follows a **modular monolith** approach using the Next.js App Router. Server Components support data-driven rendering, Server Actions handle application mutations, Better Auth manages authentication and sessions, and Drizzle ORM provides typed database access to PostgreSQL.
+Beyond the Rumour Mill uses a **modular monolith** built on the Next.js App Router. The web application, server-side actions, queries, and domain modules live in one deployable codebase, but are organised around clear product boundaries. This keeps local development and deployment simple while allowing the team to build and integrate features independently.
+
+### High-level system design
+
+The diagram shows how a request moves through the application, where validation and authentication happen, and how the platform accesses persistent data and supporting services.
 
 ```mermaid
-flowchart TD
-    A[Next.js App Router] --> B[React Server Components]
-    A --> C[Server Actions and Route Handlers]
-    C --> D[Zod Validation]
-    C --> E[Better Auth]
-    B --> F[Drizzle ORM]
-    D --> F
-    E --> F
-    F --> G[(PostgreSQL)]
-    C -.-> H[Vercel Blob Storage]
+flowchart TB
+    USER["Students & Alumni"] --> BROWSER["Browser · Next.js UI"]
+    BROWSER --> APP["Next.js App Router"]
+    APP --> RSC["React Server Components"]
+    APP --> ENTRY["Server Actions & Route Handlers"]
+    ENTRY --> AUTH["Better Auth · Sessions & Identity"]
+    ENTRY --> VALIDATE["Zod · Input Validation"]
+    RSC --> QUERIES["Server-side Queries"]
+    AUTH --> DOMAIN["Domain & Feature Logic"]
+    VALIDATE --> DOMAIN
+    QUERIES --> DOMAIN
+    DOMAIN --> MODULES["Experiences · Companies · Readiness · Alumni · Drives"]
+    MODULES --> DATA["Drizzle ORM"]
+    DATA --> DB[("PostgreSQL 16")]
+    DOMAIN --> AI["AI · Normalization · Consensus"]
+    DOMAIN --> FILES["Storage Service"]
+    FILES --> BLOB["Vercel Blob"]
+    CI["GitHub Actions · Tests · Lint · Typecheck · Build"] -. "quality gates" .-> APP
 ```
 
-### Modular Team Architecture
+### How the system works
 
-The codebase is divided into three product modules with clear ownership boundaries. This allows contributors to work in parallel while keeping shared infrastructure consistent.
+1. **Presentation:** Students and alumni interact with the Next.js interface. React Server Components render data-driven pages, while client components handle interactive UI.
+2. **Request handling:** The App Router directs reads to server-side queries and writes to Server Actions or Route Handlers.
+3. **Identity and validation:** Better Auth supplies session context. Zod validates incoming data before application operations proceed; server-side authorization checks protect user-scoped actions.
+4. **Domain processing:** Feature logic handles interview experiences, company information, candidate readiness, alumni connections, placement drives, and moderation. Supporting AI, normalization, and consensus modules process relevant information.
+5. **Persistence and files:** Drizzle ORM provides typed access to PostgreSQL, the primary store for relational application data. The storage layer integrates with Vercel Blob for file and evidence assets.
+6. **Quality gates:** GitHub Actions runs database setup and automated checks so changes can be validated before integration.
 
-| Module | Scope |
-|---|---|
-| **Module 1 — Experience Intelligence** | Interview submissions, company profiles, round records, and experience browsing |
-| **Module 2 — Candidate Readiness & Community** | Preparation checklist, interview Q&A, and alumni connections |
-| **Module 3 — Drives & Governance** | Placement drive announcements, applications, and moderation workflows |
-| **Shared Platform Core** | Database connection, authentication, shared UI, CI/CD, and deployment |
+### Team module boundaries
 
-Dedicated schema files, feature branches, and documented integration boundaries help reduce merge conflicts and make ownership clear.
+| Module | Main responsibility |
+| --- | --- |
+| **Module 1 — Experience Intelligence** | Interview submissions, company profiles, interview rounds, and experience discovery |
+| **Module 2 — Candidate Readiness & Community** | Preparation workflows, interview questions, and alumni connections |
+| **Module 3 — Drives & Governance** | Placement drives, applications, and moderation |
+| **Shared Platform Core** | Authentication, database access, shared contracts and UI, storage, CI, and deployment |
+
+### Key design decisions
+
+- **Modular monolith over microservices:** Product modules share one application and deployment, avoiding premature network and operational complexity.
+- **Clear server boundaries:** Database access, secrets, validation, and business rules stay on the server rather than being exposed to the browser.
+- **PostgreSQL as the source of truth:** Relational records and constraints support consistency across users, companies, experiences, rounds, and preparation data.
+- **Feature ownership:** Module-specific schema and component areas, shared contracts, and documented handoffs let contributors work in parallel with fewer integration conflicts.
+
+> **Scope note:** This is a high-level view of the current codebase and its intended request boundaries. It is not a deployment-topology diagram, and it does not imply that every listed product workflow or integration is fully production-ready.
 
 ## 5. Data, Security & Quality
 
