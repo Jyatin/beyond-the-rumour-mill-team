@@ -68,23 +68,23 @@ A side-by-side look at the platform's main experiences.
 <table>
   <tr>
     <td align="center" width="20%">
-      <img src="screenshots/editorial-hero.png" alt="Platform homepage" width="100%" />
-      <br /><strong>Home</strong>
+      <img src="screenshots/homepage.png" alt="Beyond the Rumour Mill Homepage" width="100%" />
+      <br /><strong>Homepage</strong>
     </td>
     <td align="center" width="20%">
-      <img src="screenshots/company-dossier.jpg" alt="Company and employer intelligence" width="100%" />
+      <img src="screenshots/companies.png" alt="Beyond the Rumour Mill Companies" width="100%" />
       <br /><strong>Companies</strong>
     </td>
     <td align="center" width="20%">
-      <img src="screenshots/preparation-hub.jpg" alt="Candidate preparation hub" width="100%" />
+      <img src="screenshots/preparation.png" alt="Beyond the Rumour Mill Preparation" width="100%" />
       <br /><strong>Preparation</strong>
     </td>
     <td align="center" width="20%">
-      <img src="screenshots/platform-preview.png" alt="Student questions and placement inquiry archive" width="100%" />
+      <img src="screenshots/questions.png" alt="Beyond the Rumour Mill Questions" width="100%" />
       <br /><strong>Questions</strong>
     </td>
     <td align="center" width="20%">
-      <img src="screenshots/alumni-dialogue.png" alt="Alumni network and mentorship" width="100%" />
+      <img src="screenshots/alumni.png" alt="Beyond the Rumour Mill Alumni" width="100%" />
       <br /><strong>Alumni</strong>
     </td>
   </tr>
