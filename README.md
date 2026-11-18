@@ -67,28 +67,26 @@ A look at the platform's interface and key product areas.
 
 <table>
   <tr>
-    <td align="center" width="100%" colspan="2">
+    <td align="center" width="33.33%">
       <img src="screenshots/editorial-hero.png" alt="Beyond the Rumour Mill editorial homepage" width="100%" />
       <br />
       <strong>01 · Editorial Homepage</strong>
       <br />
-      <sub>A central starting point for placement intelligence and platform discovery.</sub>
+      <sub>Placement intelligence and platform discovery.</sub>
     </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
+    <td align="center" width="33.33%">
       <img src="screenshots/company-dossier.jpg" alt="Company intelligence dossier" width="100%" />
       <br />
       <strong>02 · Company Intelligence</strong>
       <br />
-      <sub>Company-specific interview rounds, reported questions, and hiring context.</sub>
+      <sub>Company-specific rounds, questions, and hiring context.</sub>
     </td>
-    <td align="center" width="50%">
+    <td align="center" width="33.33%">
       <img src="screenshots/preparation-hub.jpg" alt="Candidate preparation hub" width="100%" />
       <br />
       <strong>03 · Candidate Readiness</strong>
       <br />
-      <sub>A focused space for preparation tasks and progress.</sub>
+      <sub>Preparation tasks and progress tracking.</sub>
     </td>
   </tr>
 </table>
